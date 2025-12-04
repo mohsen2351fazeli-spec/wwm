@@ -131,6 +131,7 @@ const panelbtn=document.querySelector(".panel-btn")
 const hidebtn=document.querySelector(".hide-panel")
 
 const goat=()=>{
+setTimeout(() => {
     ise=JSON.parse(localStorage.getItem("ise"))
     let x;
     if(ise){ x="en";
@@ -193,6 +194,7 @@ const goat=()=>{
     ph.forEach((n,i)=>{
         n.innerHTML=data.panel.heads[x][i]
     })
+}, 400);
 
 
 }
@@ -250,6 +252,15 @@ let ise=JSON.parse(localStorage.getItem("ise"))||true;
 const panelHandler=()=>{
     panel.classList.toggle("w-0")
     panel.classList.toggle("w-[50vw]")
+    if(Chractersbtn.classList.contains("rotate-45"))
+        ChractersHandler()
+    if(darkbtn.classList.contains("rotate-45"))
+        darkkHandler()
+    if(wipenbtn.classList.contains("rotate-45"))
+        wipenHandler()
+    if(languagebtn.classList.contains("rotate-45"))
+        languageHandler()
+
 }
 const ChractersHandler=()=>{
     Chractersbtn.classList.toggle("-rotate-[135deg]")
@@ -487,12 +498,13 @@ light.addEventListener("click",()=>{
 ef.addEventListener("click",()=>{
     localStorage.setItem("ise",JSON.stringify(true))
     goat()
+    panelHandler()
 })
 ff.addEventListener("click",()=>{
-    console.log("ss");
     
     localStorage.setItem("ise",JSON.stringify(false))
     goat()
+    panelHandler()
 })
 
 
