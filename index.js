@@ -201,7 +201,72 @@ setTimeout(() => {
 
 
 
+const goatspeed=()=>{
+    ise=JSON.parse(localStorage.getItem("ise"))
+    let x;
+    if(ise){ x="en";
+        df.innerHTML="dark"
+        lf.innerHTML="light"
+        ef.innerHTML="EN"
+        ff.innerHTML="FA"
+        firsttext.setAttribute("dir","ltr")
+        twotext.setAttribute("dir","ltr")
+        footer.setAttribute("dir","ltr")
+        mohsen.setAttribute("dir","ltr")
+        qq.setAttribute("dir","ltr")
+        hidebtn.setAttribute("dir","ltr")
+    }
+    else{x="fa";
+        df.innerHTML="تاریک"
+        lf.innerHTML="روشن"
+        ef.innerHTML="انگلیسی"
+        ff.innerHTML="فارسی"
+        firsttext.setAttribute("dir","rtl")
+        twotext.setAttribute("dir","rtl")
+        footer.setAttribute("dir","rtl")
+        mohsen.setAttribute("dir","rtl")
+        qq.setAttribute("dir","rtl")
+        hidebtn.setAttribute("dir","ltr")
+    }
+        
+    firsttext.innerHTML=data.mein.firsttext[x]
+    twotext.innerHTML=data.mein.twotext[x]
+    timeline.forEach((n,i)=>{
+        n.innerHTML=data.mein.timeline[x][i]
+    })
+    greatspan.forEach((n,i)=>{
+        n.innerHTML=data.mein.greatspan[x][i]
+    })
+    greatspangu.forEach((n,i)=>{
+        n.innerHTML=data.mein.greatspangu[x][i]
+    })
+    pageexp.innerHTML=data.mein.pageexp[x]
+    amarhed.forEach((n,i)=>{
+        n.innerHTML=data.mein.amarhed[x][i]
+    })
+    Germany.forEach((n)=>{
+        n.innerHTML=data.mein.countries[x][0]
+    })
+    USSR.forEach((n)=>{
+        n.innerHTML=data.mein.countries[x][1]
+    })
+    France.forEach((n)=>{
+        n.innerHTML=data.mein.countries[x][2]
+    })
+    USA.forEach((n)=>{
+        n.innerHTML=data.mein.countries[x][3]
+    })
+    UK.forEach((n)=>{
+        n.innerHTML=data.mein.countries[x][4]
+    })
+    Colonies.innerHTML=data.mein.countries[x][5];
+    footer.innerHTML=data.mein.footer[x]
+    ph.forEach((n,i)=>{
+        n.innerHTML=data.panel.heads[x][i]
+    })
 
+
+}
 
 
 
@@ -514,4 +579,5 @@ tanksNav();
 earplaneNav();
 resNav();
 darkHandler();
-goat()
+goatspeed()
+
